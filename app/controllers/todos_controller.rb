@@ -4,12 +4,13 @@ class TodosController < ApplicationController
     def index
       render plain: Todo.order(:id).map { |todo| todo.to_pleasant_string }.join("\n")
     end
+
     def show
       id = params[:id]
       todo = Todo.find(id)
-      puts todo
       render plain: todo.to_pleasant_string
     end
+    
     def create
       todo_text = params[:todo_text]
       due_date = DateTime.parse(params[:due_date])
@@ -22,6 +23,7 @@ class TodosController < ApplicationController
       response_text = "New todo created with id #{new_todo.id}"
       render plain: response_text
     end
+    
     def update
       id = params[:id]
       completed = params[:completed]
@@ -30,4 +32,5 @@ class TodosController < ApplicationController
       todo.save!
       render plain: "Completed #{id} todo to #{completed}."
     end
+    
   end
