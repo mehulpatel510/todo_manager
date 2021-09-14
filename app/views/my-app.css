@@ -1,6 +1,6 @@
 body{
     font-family: sans-serif;
-    max-width: 600px;
+    max-width: 900px;
     margin: 32px auto 0 auto;
 }
 .Todopage-title{
@@ -9,9 +9,25 @@ body{
     color: darkcyan;
     
 }
+.SplashImage{
+max-width: 300px;
+}
+.TodopageMain{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.SectionDiv{
+    display: block;
+}
+.Todopage-article
+{
+    padding: 10px;
+    
+    
+}
 .Todopage-section{
-    margin-bottom: 32px;
-    margin-left: 32px;
+    margin: 10px;
     background-color: darkgray;
     padding: 10px;
 }
