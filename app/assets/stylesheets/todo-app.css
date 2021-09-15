@@ -68,7 +68,7 @@ body {
 }
 
 .Todopage-section-list {
-    margin: 0px 10px;
+    margin: 0px 35px;
     list-style-type: none;
 }
 
@@ -80,6 +80,11 @@ body {
 .Todopage-li:hover {
     background-color: rgb(245, 239, 239);
     border-radius: 5px;
+}
+.Todopage-label-due_date {
+    color: lightgray;
+    margin: 0px 10px;
+    font-size: 10px;
 }
 
 .Todopage-label-overdue {

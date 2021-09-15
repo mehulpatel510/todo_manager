@@ -14,89 +14,33 @@
     <main class="TodopageMain">
         <h1 class="Todopage-title">My Todo-list</h1>
         <atrticle class="Todopage-article">
-            <section class="Todopage__section--add">
-                <input class="Todopage__input Todopage__input--text" type="text" name="todo_text" id="todo_text"
-                    placeholder="What's next?" />
-                <input class="Todopage__input  Todopage__input--date" type="date" name="due_date" id="due_date" />
-                <input class="Todopage__input  Todopage__input--button" type="submit" name="add" id="add" value="Add" />
+            <section class="Todopage-section-add">
+                <input class="Todopage-input" type="text" name="todo_text" id="todo_text" placeholder="What's next?" />
+                <input class="Todopage-input" type="date" name="due_date" id="due_date" />
+                <input class="Todopage-input  Todopage-input-button" type="submit" name="add" id="add" value="Add" />
 
             </section>
-            <section class="Todopage__section--todo">
-                <div class="Todopage-tasktitle">
-                    <p class="Todopage-tasktitle--text">Due Today </p>
-                    <p class="Todapage-tacktitle--count"> 0/4 </p>
-                </div>
-                <ul class="Todopage__section--list">
-                    <li class="Todopage__li">
-                        <input class="Todopage__checkbox" type="checkbox" name="todo_1" id="todo_1">
-                        <label for="todo_1">Submit Saas 201 project</label>
-                        <label for="todo_1" class="Todopage__label--overdue">Overdue</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                    <li class="Todopage__li">
-                        <input type="checkbox" name="todo_2" id="todo_2">
-                        <label for="todo_2">Call accountant</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                </ul>
-            </section>
-            <section class="Todopage__section--todo">
-                <div class="Todopage-tasktitle">
-                    <p class="Todopage-tasktitle--text">Due Tomorrow </p>
-                    <p class="Todapage-tacktitle--count"> 0/3 </p>
-                </div>
-                <ul class="Todopage__section--list">
-                    <li class="Todopage__li">
-                        <input class="Todopage__checkbox" type="checkbox" name="todo_3" id="todo_3">
-                        <label for="todo_3">Refill groceries</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                </ul>
-            </section>
-            <section class="Todopage__section--todo">
-                <div class="Todopage-tasktitle">
-                    <p class="Todopage-tasktitle--text">Remaining</p>
-                    <p class="Todapage-tacktitle--count"> 0/3 </p>
-                </div>
-                <ul class="Todopage__section--list">
-                    <li class="Todopage__li">
-                        <input class="Todopage__checkbox" type="checkbox" name="todo_4" id="todo_4">
-                        <label for="todo_4">Type Something</label>
-                        <label for="todo_4" class="Todopage__label--date">Jan 21</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                    <li class="Todopage__li">
-                        <input type="checkbox" name="todo_5" id="todo_5">
-                        <label for="todo_5">Type Something</label>
-                        <label for="todo_5" class="Todopage__label--date">Jan 22</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                    <li class="Todopage__li">
-                        <input type="checkbox" name="todo_6" id="todo_6">
-                        <label for="todo_6">Type Something</label>
-                        <label for="todo_6" class="Todopage__label--date">Jan 23</label>
-                        <a href="">
-                            <img class="Todopage__img" src="delete.svg" alt="delete">
-                        </a>
-
-                    </li>
-                </ul>
-            </section>
+            <%= render partial:"todo-section", 
+            locals:{
+                section_title: "Due Today",
+                todos: Todo.due_today,
+                show_due_date:false
+            }
+            %>
+            <%= render partial:"todo-section", 
+            locals:{
+                section_title: "Overdue",
+                todos: Todo.overdue,
+                show_due_date:true
+            }
+            %>
+            <%= render partial:"todo-section", 
+            locals:{
+                section_title: "Due Later",
+                todos: Todo.due_later,
+                show_due_date:true
+            }
+            %>
         </atrticle>
     </main>
 </body>
