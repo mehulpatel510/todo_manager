@@ -2,7 +2,7 @@
                 <div class="Todopage-tasktitle">
                     <p class="Todopage-tasktitle-text"><%= section_title %> </p>
                     <p class="Todopage-tasktitle-count"> 
-                    todos.completed.count/todos.count </p>
+                    <%= todos.completed.count %>/<%= todos.count %> </p>
                 </div>
                 <ul class="Todopage-section-list">
                     <% todos.each do |todo| %>
