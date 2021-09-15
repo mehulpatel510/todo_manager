@@ -1,6 +1,6 @@
 body {
     font-family: sans-serif;
-    max-width: 600px;
+    max-width: 490px;
     margin: auto;
 }
 
@@ -21,76 +21,77 @@ body {
     margin: auto;
 }
 
-.Todopage__section--add {
+.Todopage-section-add {
     margin: 10px;
     display: flex;
     align-items: stretch;
 }
 
-.Todopage__input {
+.Todopage-input {
     border: 1px solid lightgray;
     border-radius: 5px;
     padding: 10px;
     margin: 10px;
 }
 
-.Todopage__input--text {
-    width: 200px;
-}
-
-.Todopage__input--date {
-    width: 150px;
-}
-
-.Todopage__input--button {
-    width: 70px;
+.Todopage-input-button {
     border-color: transparent;
     background-color: green;
     color: white;
+    padding-left: 35px;
+    padding-right: 35px;
 }
 
 .Todopage-task {
-    margin: 0;
+    margin: 0px;
 }
 
 .Todopage-tasktitle {
     margin: 0px 10px;
-    padding: 30px 10px 0px 10px;
+    padding: 0px 10px 0px 10px;
     display: flex;
     align-items: center;
-    height: 30px;
 }
 
-.Todopage-tasktitle--text {
+.Todopage-tasktitle-text {
     font-size: 16px;
     margin: 0px 10px;
     font-weight: 600;
 }
 
-.Todopage-tasktitle--count {
+.Todopage-tasktitle-count {
     margin: 0px 10px;
 }
 
-.Todopage__section--todo {
-    margin-top: 10px;
+.Todopage-section-todo {
+    margin-top: 35px;
 }
 
-.Todopage__section--list {
+.Todopage-section-list {
     margin: 0px 10px;
     list-style-type: none;
 }
 
-.Todopage__section--li {
-    margin: auto;
+.Todopage-li {
+    margin: 10px;
+    align-items: center;
 }
 
-.Todopage__label--overdue {
+.Todopage-li:hover {
+    background-color: rgb(245, 239, 239);
+    border-radius: 5px;
+}
+
+.Todopage-label-overdue {
     color: red;
     margin: 0px 10px;
 }
 
-.Todopage__img {
-    height: 20px;
-    visibility: visible;
-    margin-top: 10px;
+.Todopage-img {
+    opacity: 0;
+    margin-left: 10px;
+}
+
+.Todopage-img:hover {
+    opacity: 1;
 }
