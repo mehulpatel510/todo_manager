@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todo Management App</title>
-    <link rel="stylesheet" type="text/css" href="todo-app.css" />
+    
 </head>
 
 <body>
@@ -22,16 +22,17 @@
             </section>
             <%= render partial: "todo-section",
                        locals: {
-                         section_title: "Due Today",
-                         todos: Todo.due_today,
-                         show_due_date: false,
-                       } %>
-            <%= render partial: "todo-section",
-                       locals: {
                          section_title: "Overdue",
                          todos: Todo.overdue,
                          show_due_date: true,
                        } %>
+            <%= render partial: "todo-section",
+                       locals: {
+                         section_title: "Due Today",
+                         todos: Todo.due_today,
+                         show_due_date: false,
+                       } %>
+            
             <%= render partial: "todo-section",
                        locals: {
                          section_title: "Due Later",

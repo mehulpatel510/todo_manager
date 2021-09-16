@@ -1,23 +1,20 @@
  <section class="Todopage-section-todo">
-                <div class="Todopage-tasktitle">
-                    <p class="Todopage-tasktitle-text"><%= section_title %> </p>
-                    <p class="Todopage-tasktitle-count"> 
-                    <%= todos.completed.count %>/<%= todos.count %> </p>
-                </div>
-                <ul class="Todopage-section-list">
-                    <% todos.each do |todo| %>
-                    <li class="Todopage-li">
-                        <input class="Todopage-checkbox" type="checkbox" name="todo_<%=todo.id%>" id="<%=todo.id%>">
-                        <label for="todo_<%=todo.id%>"><%=todo.todo_text%></label>
-                        <% if show_due_date %>
-                        <label for="todo_<%=todo.id%>" class="Todopage-label-due_date"><%=todo.due_date.to_s(:short)%></label>
-                        <% end %>
-                        <a href="">
-                            <img class="Todopage-img" src="delete.svg" alt="delete">
-                        </a>
-                    </li>
-                      
-                    <% end %>
-                    
-                </ul>
-            </section>
+    <div class="Todopage-tasktitle">
+        <p class="Todopage-tasktitle-text"><%= section_title %> </p>
+        <p class="Todopage-tasktitle-count"><%= todos.completed.count %>/<%= todos.count %> </p>
+    </div>
+    <ul class="Todopage-section-list">
+        <% todos.each do |todo| %>
+            <li class="Todopage-li">
+                <input class="Todopage-checkbox" type="checkbox" name="todo_<%= todo.id %>" id="<%= todo.id %>" <%= todo.completed ? "checked" : "" %>>
+                <label for="todo_<%= todo.id %>" style=<%= todo.completed ? "text-decoration:line-through" : "" %> ><%= todo.todo_text %></label>
+                <% if show_due_date %>
+                    <label for="todo_<%= todo.id %>" class="Todopage-label-due_date"><%= todo.due_date.to_s(:short) %></label>
+                <% end %>
+                <a href="">
+                    <img class="Todopage-img" src="delete.svg" alt="delete">
+                </a>
+            </li>
+        <% end %>
+    </ul>
+</section>
