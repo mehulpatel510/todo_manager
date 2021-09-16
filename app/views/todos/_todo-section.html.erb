@@ -8,11 +8,10 @@
             <li class="Todopage-li">
                 
                 <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
-                    <input class="Todopage-checkbox" type="checkbox" name="completed" <%= todo.completed ? "checked" : "" %> 
-                    onclick="this.form.submit()" />
+                    <%= check_box_tag "completed", nil, todo.completed, class: "Todopage-checkbox", onclick: "this.form.submit()" %>
                 <% end %>
 
-                <p class='<%= todo.completed ? "TodoItem-compeletedText" : "" %>' > 
+                <p class='TodoItem-Text  <%= todo.completed ? "TodoItem-compeletedText" : "" %>' > 
                     <%= todo.todo_text %>
                 </p>
                 <% if show_due_date %>
@@ -20,7 +19,7 @@
                 <% end %>
                 <a href="javascript:void(0)">
                     <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
-                        <input  class="Todopage-img" type="image" src="delete.svg">
+                        <%= image_submit_tag("delete.svg", class: "Todopage-img") %>
                     <% end %>
                 </a>
             </li>
