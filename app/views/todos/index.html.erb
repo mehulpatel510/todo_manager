@@ -14,12 +14,11 @@
     <main class="TodopageMain">
         <h1 class="Todopage-title">My Todo-list</h1>
         <atrticle class="Todopage-article">
-            <section class="Todopage-section-add">
+            <%= form_with(url:"/todos", method:"post", class:"Todopage-section-add") do %>
                 <input class="Todopage-input" type="text" name="todo_text" id="todo_text" placeholder="What's next?" />
                 <input class="Todopage-input" type="date" name="due_date" id="due_date" />
                 <input class="Todopage-input  Todopage-input-button" type="submit" name="add" id="add" value="Add" />
-
-            </section>
+            <% end %>
             <%= render partial: "todo-section",
                        locals: {
                          section_title: "Overdue",

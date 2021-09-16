@@ -6,13 +6,22 @@
     <ul class="Todopage-section-list">
         <% todos.each do |todo| %>
             <li class="Todopage-li">
-                <input class="Todopage-checkbox" type="checkbox" name="todo_<%= todo.id %>" id="<%= todo.id %>" <%= todo.completed ? "checked" : "" %>>
-                <label for="todo_<%= todo.id %>" style=<%= todo.completed ? "text-decoration:line-through" : "" %> ><%= todo.todo_text %></label>
-                <% if show_due_date %>
-                    <label for="todo_<%= todo.id %>" class="Todopage-label-due_date"><%= todo.due_date.to_s(:short) %></label>
+                
+                <%= form_with(url: "/todos/#{todo.id}", method: "put") do %>
+                    <input class="Todopage-checkbox" type="checkbox" name="completed" <%= todo.completed ? "checked" : "" %> 
+                    onclick="this.form.submit()" />
                 <% end %>
-                <a href="">
-                    <img class="Todopage-img" src="delete.svg" alt="delete">
+
+                <p class='<%= todo.completed ? "TodoItem-compeletedText" : "" %>' > 
+                    <%= todo.todo_text %>
+                </p>
+                <% if show_due_date %>
+                    <p for="todo_<%= todo.id %>" class="Todopage-label-due_date"><%= todo.due_date.to_s(:short) %></p>
+                <% end %>
+                <a href="javascript:void(0)">
+                    <%= form_with(url: "/todos/#{todo.id}", method: "delete") do %>
+                        <input  class="Todopage-img" type="image" src="delete.svg">
+                    <% end %>
                 </a>
             </li>
         <% end %>
