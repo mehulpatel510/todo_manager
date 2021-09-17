@@ -1,7 +1,9 @@
 class Todo < ActiveRecord::Base
-  skip_before_action :verify_authenticity_token
-  
   belongs_to :user
+  
+  skip_before_action :verify_authenticity_token
+
+  
   def due_today?
     due_date == Date.today
   end
