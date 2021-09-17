@@ -100,11 +100,11 @@ body {
     margin: 0px 10px;
 }
 
-.Todopage-img {
-    opacity: 0;
+.Todopage-li .Todopage-img {
+    visibility: hidden;
     margin-left: 10px;
 }
 
-.Todopage-img:hover {
-    opacity: 1;
+.Todopage-li:hover .Todopage-img {
+    visibility: visible;
 }
