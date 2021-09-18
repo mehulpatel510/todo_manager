@@ -14,30 +14,32 @@
     <main class="TodopageMain">
         <h1 class="Todopage-title">My Todo-list</h1>
         <article class="Todopage-article">
-            
+            <% if flash[:error] %>
+              <p class="Flash-error"><%= flash[:error] %><p/>
+            <% end %>
             <%= form_with(url: "/todos", method: "post", class: "Todopage-section-add") do %>
                 <%= text_field_tag "todo_text", nil, placeholder: 'What\'s next?', class: "Todopage-input" %>
-                <%= date_field_tag "due_date", Date.today, class: "Todopage-input" %>
+                <%= date_field_tag "due_date",nil, class: "Todopage-input" %>
                 <%= submit_tag "Add", class: "Todopage-input  Todopage-input-button" %>
             <% end %>
             
             <%= render partial: "todo-section",
                        locals: {
                          section_title: "Overdue",
-                         todos: Todo.overdue,
+                         todos: @todos.overdue,
                          show_due_date: true,
                        } %>
             <%= render partial: "todo-section",
                        locals: {
                          section_title: "Due Today",
-                         todos: Todo.due_today,
+                         todos: @todos.due_today,
                          show_due_date: false,
                        } %>
             
             <%= render partial: "todo-section",
                        locals: {
                          section_title: "Due Later",
-                         todos: Todo.due_later,
+                         todos: @todos.due_later,
                          show_due_date: true,
                        } %>
         </article>

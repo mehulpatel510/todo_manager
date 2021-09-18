@@ -2,7 +2,10 @@
     margin: 20px;
     font-size: 30px;
 }
-
+.UsersNew{
+    border: 1px lightgray solid;
+    border-radius: 5px;
+}
 .Form-section {
     margin: 20px;
 }
@@ -22,4 +25,12 @@
     background-color: rgb(6, 172, 6);
     border-radius: 5px;
     border-style: hidden;
+}
+.Flash-error{
+    color:red;
+    margin: 20px;
+    font-size: 16px;
+    background-color: lightpink;
+    padding: 20px;
+    border-radius: 5px;
 }

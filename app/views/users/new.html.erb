@@ -1,6 +1,10 @@
 <p class="NewUsers-title">Welcome new user!</p>
 
 <section class="UsersNew">
+    <% if flash[:error] %>
+            <p class="Flash-error"><%= flash[:error] %><p/>
+    <% end %>
+    
     <%= form_with url: users_path do |form| %>
 
         <div class="Form-section">
