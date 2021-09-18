@@ -14,7 +14,7 @@ class UsersController < ApplicationController
     )
     if !new_user.save
       flash[:error] = new_user.errors.full_messages.join(", ")
-      redirect_to
+      redirect_to users_path
     else
       redirect_to "/"
     end
