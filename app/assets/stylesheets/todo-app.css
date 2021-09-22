@@ -33,6 +33,7 @@ body {
     padding: 5px;
     margin: 5px;
 }
+
 .Todopage-input-button {
     border-color: transparent;
     background-color: green;
@@ -81,9 +82,11 @@ body {
     background-color: rgb(245, 239, 239);
     border-radius: 5px;
 }
+
 .TodoItem-Text {
-   margin: 0px 10px;
+    margin: 0px 10px;
 }
+
 .TodoItem-compeletedText {
     text-decoration: line-through;
 }

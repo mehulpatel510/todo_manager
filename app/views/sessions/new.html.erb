@@ -1,11 +1,14 @@
 <p class="NewUsers-title">Sign-in! exisiting user!</p>
 
 <section class="UsersNew">
+    <% if flash[:info] %>
+            <p class="Flash-info"><%= flash[:info] %><p/>
+    <% end %>
     <%= form_with url: sessions_path do |form| %>
 
         <div class="Form-section">    
             <p class: "FormInput-label">E-mail: </p>
-            <%= form.email_field :email, class: "Form-input" %>
+            <%= form.email_field :email, class: "Form-input", autofocus: true %>
         </div>
 
         <div class="Form-section">    

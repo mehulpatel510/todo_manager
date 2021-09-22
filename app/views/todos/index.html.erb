@@ -18,8 +18,8 @@
               <p class="Flash-error"><%= flash[:error] %><p/>
             <% end %>
             <%= form_with(url: "/todos", method: "post", class: "Todopage-section-add") do %>
-                <%= text_field_tag "todo_text", nil, placeholder: 'What\'s next?', class: "Todopage-input" %>
-                <%= date_field_tag "due_date",nil, class: "Todopage-input" %>
+                <%= text_field_tag "todo_text", nil, placeholder: 'What\'s next?', class: "Todopage-input", autofocus: true %>
+                <%= date_field_tag "due_date", nil, class: "Todopage-input" %>
                 <%= submit_tag "Add", class: "Todopage-input  Todopage-input-button" %>
             <% end %>
             

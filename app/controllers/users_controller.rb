@@ -16,8 +16,8 @@ class UsersController < ApplicationController
       flash[:error] = new_user.errors.full_messages.join(", ")
       redirect_to users_path
     else
-      redirect_to home_path
+      flash[:info] = "Congrats! successfully signed-up, please sign-in to continue!"
+      redirect_to new_sessions_path
     end
   end
-  
 end
